@@ -1,6 +1,7 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, TouchableHighlight} from 'react-native';
+import {View, StyleSheet, Image} from 'react-native';
 import {BasicComponent} from '../../libs/component';
+import {BasicClick} from '../../libs/click';
 
 
 const styles = StyleSheet.create({
@@ -48,26 +49,35 @@ export class BottomTab extends BasicComponent {
   }
 
   render() {
+    const {active} = this.state;
     return <View style={styles.wrap}>
       <View style={styles.item}>
-        <TouchableHighlight onPress={() => this.clickTab(0)}>
-          <Image style={styles.image} source={this.state.active === 0 ? messageActive : message} />
-        </TouchableHighlight>
+        <BasicClick onClick={() => {
+          active !== 0 && this.setState({active: 0});
+        }}>
+          <Image style={styles.image} source={active === 0 ? messageActive : message} />
+        </BasicClick>
       </View>
       <View style={styles.item}>
-        <TouchableHighlight onPress={() => this.clickTab(1)}>
-          <Image style={styles.image} source={this.state.active === 1 ? auditActive : audit} />
-        </TouchableHighlight>
+        <BasicClick onClick={() => {
+          active !== 1 && this.clickTab(1);
+        }}>
+          <Image style={styles.image} source={active === 1 ? auditActive : audit} />
+        </BasicClick>
       </View>
       <View style={styles.item}>
-        <TouchableHighlight onPress={() => this.clickTab(2)}>
-          <Image style={styles.image} source={this.state.active === 2 ? appActive : app} />
-        </TouchableHighlight>
+        <BasicClick onClick={() => {
+          active !== 2 && this.clickTab(2);
+        }}>
+          <Image style={styles.image} source={active === 2 ? appActive : app} />
+        </BasicClick>
       </View>
       <View style={styles.item}>
-        <TouchableHighlight onPress={() => this.clickTab(3)}>
-          <Image style={styles.image} source={this.state.active === 3 ? userActive : user} />
-        </TouchableHighlight>
+        <BasicClick onClick={() => {
+          active !== 3 && this.clickTab(3);
+        }}>
+          <Image style={styles.image} source={active === 3 ? userActive : user} />
+        </BasicClick>
       </View>
     </View>;
   }
