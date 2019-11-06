@@ -10,6 +10,8 @@ const styles = StyleSheet.create({
     height: 50,
     flexDirection: 'row',
     justifyContent: 'space-around',
+    borderTopColor: 'rgba(204,204,204,0.39)',
+    borderTopWidth: 1,
   },
 
   item: {
@@ -40,11 +42,10 @@ const userActive = require('./assets/user-active.png');
 export class BottomTab extends BasicComponent {
 
   state = {
-    active: 2,
+    active: 0,
   };
 
   clickTab(active) {
-    console.log(`<${'='.repeat(30)} index.js:45 ${'='.repeat(30)}>`);
     this.setState({active});
   }
 

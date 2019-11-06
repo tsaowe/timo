@@ -11,11 +11,13 @@ export class TopBar extends BasicComponent {
     return (
       <View
         style={{
-          height: 60,
+          height: 80,
           flexDirection: 'row',
           marginTop: topMargin(),
           alignItems: 'center',
           justifyContent: 'space-around',
+          borderBottomColor: 'rgba(204,204,204,0.39)',
+          borderBottomWidth: 1,
         }}>
         <View style={{
           width: this.state.width - 60,
@@ -30,6 +32,7 @@ export class TopBar extends BasicComponent {
               fontSize: 18,
               paddingLeft: 15,
               paddingRight: 15,
+              position:'relative',
             }}
           />
         </View>
@@ -40,7 +43,8 @@ export class TopBar extends BasicComponent {
           <Image
             style={{width: 30, height: 30,
               position:'relative',
-              left: -10
+              left: -10,
+              // top: 5
             }}
             source={require('./assets/scan.png')}
           />

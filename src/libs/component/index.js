@@ -12,8 +12,4 @@ export class BasicComponent extends Component {
   render() {
     return <Component />;
   }
-
-  componentDidMount(): void {
-    console.log(`mount ok`);
-  }
 }

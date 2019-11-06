@@ -13,6 +13,7 @@ import {StyleSheet, ScrollView, View, Text} from 'react-native';
 import {TopBar} from './components/top';
 import {topMargin} from './style';
 import {BottomTab} from './components/bottomTab';
+import {Platte} from './components/platte';
 
 
 export default class App extends BasicComponent {
@@ -22,7 +23,7 @@ export default class App extends BasicComponent {
       <View style={styles.wrap}>
         <TopBar />
         <ScrollView style={styles.scrollView}>
-          <Text>bbbb</Text>
+          <Platte />
         </ScrollView>
         <BottomTab />
       </View>
@@ -32,9 +33,15 @@ export default class App extends BasicComponent {
 
 const styles = StyleSheet.create({
   scrollView: {
-    backgroundColor: 'yellow',
-    marginTop: topMargin(),
     flex: 1,
+    shadowColor: "#000",
+    shadowOffset:{
+      width: 0,
+      height: 6,
+    },
+    shadowOpacity: 0.39,
+    shadowRadius: 8.30,
+    elevation: 13,
   },
   wrap: {
     flex: 1,
